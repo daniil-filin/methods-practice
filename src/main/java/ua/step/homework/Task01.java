@@ -15,7 +15,9 @@ package ua.step.homework;
 public class Task01 {
 
 	public static void main(String[] args) {
-		// TODO: Проверяйте методы здесь
+		int[][]m = createNull(5,5);
+		printMatrix(m);
+		m = createOne(5,5);
 	}
 
 	/**
@@ -25,8 +27,13 @@ public class Task01 {
 	 * @return единичную (диагональную) матрицу
 	 */
 	public static int[][] createOne (int n, int m) {
-		// TODO: удалите исключение и пишите здесь код
-		throw new RuntimeException("Not implemented yet");
+		int[][] arr_one = new int[n][m];
+		for (int i = 0; i < arr_one.length; i++) {
+			for (int j = 0; j < arr_one[i].length; j++ ) {
+				if (i==j) arr_one[i][j] = 1;
+			}
+		}
+		return arr_one;
 	}
 
 	/**
@@ -36,8 +43,8 @@ public class Task01 {
 	 * @return нулевую матрицу
 	 */
 	public static int[][] createNull (int n, int m) {
-		// TODO: удалите исключение и пишите здесь код
-		throw new RuntimeException("Not implemented yet");
+		int [][] arr = new int[n][m];
+		return arr;
 	}
 
 	/**
@@ -88,7 +95,12 @@ public class Task01 {
 	 * @param matrix - матрица
 	 */
 	public static void printMatrix(int[][] matrix) {
-		// TODO: удалите исключение и пишите здесь код
-		throw new RuntimeException("Not implemented yet");
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; i < matrix[i].length; j++) {
+				System.out.print(matrix[i][j] + "\t");
+			}
+			System.out.print("\n");
+		}
+		System.out.println(matrix);
 	}
 }
